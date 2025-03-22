@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Thailane</title>
+    <script src="https://kit.fontawesome.com/2105c12e52.js" crossorigin="anonymous"></script>
+    <style>
+
+        
+        /* Estilos gerais */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            position: relative; /* Necessário para overlay */
+          
+        }
+
+            /* Adicionando imagem de fundo com opacidade */
+            .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://img.freepik.com/fotos-gratis/plano-de-fundo-texturizado-aquarela-esfumacado-colorido_53876-101802.jpg?t=st=1742665508~exp=1742669108~hmac=f24a69c9fd4126dd18bc354623b97ba7c85243c96205e4aa44e9718b954f6610&w=996") center center no-repeat;
+            background-size: cover;
+            opacity: 0.5;  /* Ajuste a opacidade aqui */
+            z-index: -1;  /* Coloca a imagem atrás do conteúdo */
+        }
+
+        
+    
+        header {
+            background: linear-gradient(135deg, #ffb6c1, #a2c2e5); /* Cores rosa pastel e azul pastel */
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        .section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .skills, .about, .contact {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Animação fadeIn */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        /* Botões */
+        .btn {
+            background-color: #ffb6c1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a2c2e5;
+        }
+
+        /* Estilo de links */
+        a {
+            color: #ffb6c1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+     <!-- Adicionando a imagem de fundo com opacidade -->
+     <div class="background-image"></div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Thailane</h1>
+        <p>Desenvolvedora Web | Fotógrafa Profissional</p>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <div class="section about">
+        <h2>Sobre Mim</h2>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHSGy_gG53Jmg/profile-displayphoto-shrink_800_800/B4DZVdXSXLHwAc-/0/1741028141892?e=1747872000&v=beta&t=h4pGY-1RHlLtpTQoBLsPWKLp6j1X9BoozCxR0yrSPIg" alt="Foto da Thailane">
+        <p>Olá! Sou Thailane, estudante de Análise e Desenvolvimento de Sistemas e apaixonada por fotografia profissional. Tenho me dedicado a aprender e evoluir minhas habilidades <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> e me arrisquei em conhecer o <strong>Python</strong>. Adoro unir criatividade e tecnologia para criar projetos únicos!</p>
+    </div>
+
+    <!-- Seção de Habilidades -->
+     
+    <div class="section skills">
+        <h2>Minhas Habilidades</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li></i>JavaScript</li>
+            <li>Introdução ao Python</li>
+            <li>Fotografia Profissional</li>
+            <li><a href="https://github.com/ThailaneCodes" target="_blank"> <i class="fa-brands fa-github"> <p></p> </i> Meu GitHub</a></li>
+        </ul>
+    </div>
+
+    <!-- Seção de Contato -->
+    <div class="section contact">
+        <h2>Contato</h2>
+        <p>E-mail:</p>
+        <button class="btn" onclick="mostrarMensagem()"><i class="fa-solid fa-envelope"></i><p></p>devthailaneoliveira@gmail.com</button>
+    </div>
+
+    <!-- Script para interação -->
+    <script>
+        // Função que mostra uma mensagem interativa ao clicar no botão
+        function mostrarMensagem() {
+            alert("Obrigado pelo interesse! Em breve entrarei em contato.");
+        }
+
+        // Função que faz as animações de fadeIn nas seções
+        window.onload = function() {
+            let sections = document.querySelectorAll('.section');
+            sections.forEach(function(section, index) {
+                setTimeout(function() {
+                    section.style.opacity = 1;
+                }, index * 500); // Animação escalonada para cada seção
+            });
+        }
+    </script>
+</body>
+</html>
